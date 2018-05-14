@@ -1,0 +1,74 @@
+
+<html>
+<head>
+<title>test_page</title>
+<style>
+table.sortable thead {
+background-color:#eee;
+color:#666666;
+font-weight: bold;
+cursor: default;
+}
+table.sortable td {
+text-align: right;
+}
+a {
+color: cyan;
+}
+a:visited {
+color: gray;
+}
+</style>
+<script src="https://kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+<!-- Plotly.js -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<h1>Test Page</h1>
+<p><b>testing</b></p>
+<div id="test_div" style="width:500px;height:500px;background-color:white" onshow></div>
+<script>
+data = [
+{
+x: [1, 2, 3],
+y: [2, 1, 2],
+line: {
+color: 'blue'},
+type: 'bar',
+name: 'case#1'},
+{
+x: [1, 2, 3],
+y: [4, 2, 1],
+line: {
+color: 'red'},
+type: 'bar',
+name: 'case#2'},
+{
+x: [1, 2, 3],
+y: [3, 3, 3],
+line: {
+color: 'orange'},
+type: 'bar',
+name: 'case#3'}
+]
+
+</script>
+<script>
+layout = {
+title: 'test plot',
+height: 300,
+margin: {
+pad: 10,
+l: 50,
+b: 50,
+t: 100,
+r: 50},
+width: 500}
+</script>
+<script>
+Plotly.plot(document.getElementById("test_div"), data, layout)
+</script>
+
+</body>
+</html>
+        
