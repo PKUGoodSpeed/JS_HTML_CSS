@@ -26,11 +26,12 @@ def getLineObj(x, y, name, color):
     return dictToString(obj)
 
 
-def getScattorObj(x, y, name, color, size=8):
+def getScattorObj(x, y, text, name, color, size=8):
     """ Getting a plotly scatter object """
     obj = {
         'x': x,
         'y': y,
+        'text': text,
         'type': 'scatter',
         'mode': 'markers',
         'name': name,

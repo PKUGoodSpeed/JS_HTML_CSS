@@ -14,13 +14,25 @@ def getRandomColor(num_colors=1):
     return ["#" + "".join([random.choice('0123456789ABCDEF') for j in range(6)]) for i in range(num_colors)]
 
 
+def dataToString(x):
+    """
+    Converting raw data type in to string
+    :param x: input data
+    :return: string format
+    """
+    if type(x) is str:
+        return '\"{X}\"'.format(X=x)
+    else:
+        return str(x)
+
+
 def listToString(l):
     """
     Converting list to string
     :param l: The input list, within which each entry is in the type of int, float, string, tuple, or bool
     :return: a string, with list elements are parsed by comma
     """
-    return '[' + ', '.join([str(v) for v in l]) + "]"
+    return '[' + ', '.join([dataToString(v) for v in l]) + "]"
 
 
 def dictToString(d):
